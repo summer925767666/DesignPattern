@@ -1,0 +1,3 @@
+﻿class GameStateInfoUI:UISystem
+{
+}
