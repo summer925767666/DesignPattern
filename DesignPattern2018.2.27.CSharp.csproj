@@ -225,6 +225,7 @@
     <Compile Include="Assets\DesignPattern\DM02Bridge.cs" />
     <Compile Include="Assets\DesignPattern\DM03Strategy.cs" />
     <Compile Include="Assets\DesignPattern\DM04Temple.cs" />
+    <Compile Include="Assets\DesignPattern\DM05Builder.cs" />
     <Compile Include="Assets\Scripts\ArchievementSystem\ArchievementSystem.cs" />
     <Compile Include="Assets\Scripts\BassClass\IGameSystem.cs" />
     <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
@@ -257,6 +258,10 @@
     <Compile Include="Assets\Scripts\Factory\Asset\LocalAssetFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Asset\RemoteAssetFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Asset\ResourcesAssetFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\Character\Bulider\CharacterBuilder.cs" />
+    <Compile Include="Assets\Scripts\Factory\Character\Bulider\CharacterDirector.cs" />
+    <Compile Include="Assets\Scripts\Factory\Character\Bulider\EnemyBuilder.cs" />
+    <Compile Include="Assets\Scripts\Factory\Character\Bulider\SoldierBuilder.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\EnemyFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\ICharacterFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\SoldierFactory.cs" />

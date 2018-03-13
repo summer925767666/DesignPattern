@@ -5,6 +5,9 @@ public class EnemyFactory : ICharacterFactory
 {
     public T CreatCharacter<T>(Type weaponType, Vector3 spawnPos, int lv = 1) where T : Character, new()
     {
+        EnemyBuilder builder=new EnemyBuilder(typeof(T),weaponType,spawnPos,lv);
+        return CharacterDirector.Construct(builder) as T;
+
         T character = Activator.CreateInstance(typeof(T)) as T;
         if (character == null)
         {
@@ -17,6 +20,7 @@ public class EnemyFactory : ICharacterFactory
         float moveSpeed = 0;
         string iconSprite = null;
         string prefabName = null;
+
 
         switch (typeof(T).ToString())
         {

@@ -34,6 +34,7 @@ public abstract class Character
     //数值属性
     public CharacterAttribute Attribute
     {
+        get { return _Attribute; }
         set { _Attribute = value; }
     }
     //游戏体
