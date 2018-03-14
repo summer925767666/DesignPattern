@@ -1,4 +1,4 @@
-﻿public interface IAttributeStrategy
+﻿public interface ICharAttributeStrategy
 {
     int GetExtraHP(int lv );
     int GetDescDmg(int lv);

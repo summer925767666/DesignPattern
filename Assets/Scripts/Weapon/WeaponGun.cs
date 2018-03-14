@@ -2,7 +2,7 @@
 
 public class WeaponGun:Weapon
 {
-    public WeaponGun(int atk, float atkRange, GameObject gameObject) : base(atk, atkRange, gameObject)
+    public WeaponGun(WeaponShareAttribute attribute, GameObject gameObject) : base(attribute, gameObject)
     {
     }
 

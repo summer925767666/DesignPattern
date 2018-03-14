@@ -2,11 +2,9 @@
 
 public abstract class Weapon
 {
-    protected int _Atk; //攻击力
-    protected float _AtkRange; //攻击范围
-    protected float _AtkPlusValue; //暴击值
-    protected Character _Owner; //武器持有者
+    protected WeaponShareAttribute Attribute;
 
+    protected Character _Owner; //武器持有者
     protected GameObject _GameObject; //武器游戏体
     protected ParticleSystem ParticleSystem; //枪口发射子弹特效
     protected LineRenderer LineRenderer; //子弹轨迹
@@ -17,12 +15,12 @@ public abstract class Weapon
 
     public int Atk
     {
-        get { return _Atk; }
+        get { return Attribute.Atk; }
     }
 
     public float AtkRange
     {
-        get { return _AtkRange; }
+        get { return Attribute.AtkRange; }
     }
 
     public Character Owner
@@ -35,12 +33,10 @@ public abstract class Weapon
         get { return _GameObject; }
     }
 
-    protected Weapon(int atk, float atkRange, GameObject gameObject)
+    protected Weapon(WeaponShareAttribute attribute, GameObject gameObject)
     {
-        this._Atk = atk;
-        this._AtkRange = atkRange;
-        this._GameObject = gameObject;
-
+        Attribute = attribute;
+        _GameObject = gameObject;
         Transform effect = gameObject.transform.Find("Effect");
         ParticleSystem = effect.GetComponent<ParticleSystem>();
         LineRenderer = effect.GetComponent<LineRenderer>();

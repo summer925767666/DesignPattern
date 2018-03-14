@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyAttributeStrategy : IAttributeStrategy
+public class EnemyAttributeStrategy : ICharAttributeStrategy
 {
     public int GetExtraHP(int lv)
     {

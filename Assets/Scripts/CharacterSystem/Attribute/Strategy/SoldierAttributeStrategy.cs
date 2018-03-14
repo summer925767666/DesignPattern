@@ -1,4 +1,4 @@
-﻿public class SoldierAttributeStrategy:IAttributeStrategy
+﻿public class SoldierAttributeStrategy:ICharAttributeStrategy
 {
     public int GetExtraHP(int lv)
     {

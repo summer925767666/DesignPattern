@@ -1,6 +1,6 @@
-﻿public class CharacterDirector
+﻿ public class CharacterDirector
 {
-    public static Character Construct(CharacterBuilder builder)
+    public static Character Construct(AbstractCharacterBuilder builder)
     {
         builder.BuildAttribute();
         builder.BuildGameObject();
