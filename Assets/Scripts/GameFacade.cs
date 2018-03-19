@@ -24,6 +24,8 @@ public class GameFacade
     private GameStateInfoUI gameStateInfoUI;
     private SoldierInfoUI soldierInfoUI;
 
+    public CampInfoUI CampInfoUI { get { return campInfoUI; } }
+
     public void Init()
     {
         systemList=new List<IGameSystem>();

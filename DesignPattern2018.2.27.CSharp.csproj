@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>2017.2.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -225,9 +227,12 @@
     <Compile Include="Assets\DesignPattern\DM04Temple.cs" />
     <Compile Include="Assets\DesignPattern\DM05Builder.cs" />
     <Compile Include="Assets\DesignPattern\DM06Composite.cs" />
+    <Compile Include="Assets\DesignPattern\DM07Command.cs" />
     <Compile Include="Assets\Scripts\ArchievementSystem\ArchievementSystem.cs" />
     <Compile Include="Assets\Scripts\BassClass\IGameSystem.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\BaseCamp.cs" />
     <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\SoldierCamp.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Attribute\CharacterAttribute.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Attribute\EnemyAttribute.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Attribute\Share\CharShareAttribute.cs" />
@@ -252,6 +257,7 @@
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierCaptain.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierRookie.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Soldier\SoldierSergeant.cs" />
+    <Compile Include="Assets\Scripts\Compoment\CampOnClick.cs" />
     <Compile Include="Assets\Scripts\Compoment\DestoryForTime.cs" />
     <Compile Include="Assets\Scripts\EnergySystem\EnergySystem.cs" />
     <Compile Include="Assets\Scripts\Factory\Asset\IAssetFactory.cs" />
@@ -280,6 +286,7 @@
     <Compile Include="Assets\Scripts\SceneState\SceneStateController.cs" />
     <Compile Include="Assets\Scripts\SceneState\StartState.cs" />
     <Compile Include="Assets\Scripts\StageSystem\StageSystem.cs" />
+    <Compile Include="Assets\Scripts\Tools\UITool.cs" />
     <Compile Include="Assets\Scripts\Tools\UnityTool.cs" />
     <Compile Include="Assets\Scripts\UISystem\CampInfoUI.cs" />
     <Compile Include="Assets\Scripts\UISystem\GamePauseUI.cs" />

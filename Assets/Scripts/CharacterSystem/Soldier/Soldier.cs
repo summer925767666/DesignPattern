@@ -1,5 +1,9 @@
-﻿public abstract class Soldier : Character
+﻿using System;
+
+public abstract class Soldier : Character
 {
+
+
     protected SoldierFSMSystem Fsm;
 
     protected Soldier()

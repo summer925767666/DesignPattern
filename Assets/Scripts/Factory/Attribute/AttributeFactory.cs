@@ -48,9 +48,9 @@ public class AttributeFactory
     {
         weaponShareAttributes = new Dictionary<Type, WeaponShareAttribute>
         {
-            {typeof(WeaponGun), new WeaponShareAttribute("霰弹枪", 20, 5, "WeaponGun")},
-            {typeof(WeaponRifle), new WeaponShareAttribute("步枪", 30, 7, "WeaponRifle")},
-            {typeof(WeaponRocket), new WeaponShareAttribute("火箭筒", 40, 8, "WeaponRocket")}
+            {typeof(WeaponGun), new WeaponShareAttribute("霰弹枪", 20, 5, "WeaponGun",1)},
+            {typeof(WeaponRifle), new WeaponShareAttribute("步枪", 30, 7, "WeaponRifle",2)},
+            {typeof(WeaponRocket), new WeaponShareAttribute("火箭筒", 40, 8, "WeaponRocket",3)}
         };
     }
 

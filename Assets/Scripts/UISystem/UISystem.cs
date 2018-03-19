@@ -1,5 +1,9 @@
-﻿public abstract class UISystem:IGameSystem
+﻿using UnityEngine;
+
+public abstract class UISystem:IGameSystem
 {
+    public GameObject Root { get; set; }
+
     public virtual void Init()
     {
     }
