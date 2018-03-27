@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Reflection;
 using UnityEngine;
 
 public class SoldierFactory : ICharacterFactory
 {
-    public T CreatCharacter<T>(Type weaponType, Vector3 spawnPos, int lv = 1) where T : Character, new()
+    public Character CreatCharacter(Type characterType, Type weaponType, Vector3 spawnPos, int lv = 1)
     {
-        SoldierBuilder builder=new SoldierBuilder(typeof(T),weaponType,spawnPos,lv);
-        return CharacterDirector.Construct(builder) as T;
+        SoldierBuilder builder = new SoldierBuilder(characterType, weaponType, spawnPos, lv);
+        Character soldier = CharacterDirector.Construct(builder);
+        GameFacade.Instance.CharacterSystem.AddSoldier(soldier as Soldier);//添加到角色系统
+
+        return soldier;
     }
 }

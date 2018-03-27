@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
 public class CharacterFactory:ICharacterFactory
 {
-    public T CreatCharacter<T>(Type weaponType, Vector3 spawnPos, int lv = 1) where T : Character, new()
+    public Character CreatCharacter(Type characterType, Type weaponType, Vector3 spawnPos, int lv = 1)
     {
-        AbstractCharacterBuilder builder=new CharacterBuilder(typeof(T),weaponType,spawnPos,lv);
-        return CharacterDirector.Construct(builder) as T;
+        AbstractCharacterBuilder builder = new CharacterBuilder(characterType, weaponType, spawnPos, lv);
+        return CharacterDirector.Construct(builder);
     }
 }
 

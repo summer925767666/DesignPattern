@@ -2,14 +2,22 @@
 
 public abstract class UISystem:IGameSystem
 {
-    public GameObject Root { get; set; }
+    protected GameFacade Facade;
+    public abstract Transform Root { get; }
 
-    public virtual void Init()
+    public void Init()
+    {
+        Facade = GameFacade.Instance;
+        Start();
+    }
+
+    protected virtual void Start()
     {
     }
 
     public virtual void Update()
     {
+
     }
 
     public virtual void Release()

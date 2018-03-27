@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class EnemyFactory : ICharacterFactory
 {
-    public T CreatCharacter<T>(Type weaponType, Vector3 spawnPos, int lv = 1) where T : Character, new()
+    public Character CreatCharacter(Type characterType, Type weaponType, Vector3 spawnPos, int lv = 1)
     {
-        EnemyBuilder builder=new EnemyBuilder(typeof(T),weaponType,spawnPos,lv);
-        return CharacterDirector.Construct(builder) as T;
+        EnemyBuilder builder = new EnemyBuilder(characterType, weaponType, spawnPos, lv);
+        Character enemy= CharacterDirector.Construct(builder);
+        GameFacade.Instance.CharacterSystem.AddEnemy(enemy as Enemy);
+        return enemy;
     }
 }
 

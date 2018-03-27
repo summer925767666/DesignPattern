@@ -25,6 +25,9 @@ public class GameFacade
     private SoldierInfoUI soldierInfoUI;
 
     public CampInfoUI CampInfoUI { get { return campInfoUI; } }
+    public GameStateInfoUI GameStateInfoUI { get { return gameStateInfoUI; } }
+    public CharacterSystem CharacterSystem { get { return characterSystem; } }
+    public EnergySystem EnergySystem { get { return energySystem; } }
 
     public void Init()
     {

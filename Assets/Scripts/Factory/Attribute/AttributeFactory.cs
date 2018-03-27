@@ -69,6 +69,11 @@ public class AttributeFactory
 
     public WeaponShareAttribute GetWeaponShareAttribute(Type weaponType)
     {
+        if (weaponType==null)
+        {
+            return null;
+        }
+
         WeaponShareAttribute attribute;
         weaponShareAttributes.TryGetValue(weaponType, out attribute);
 
@@ -78,5 +83,18 @@ public class AttributeFactory
         }
 
         return attribute;
+    }
+
+    public Type GetWeaponType(int weaponLv)
+    {
+        foreach (KeyValuePair<Type, WeaponShareAttribute> pair in weaponShareAttributes)
+        {
+            if (pair.Value.Lv==weaponLv)
+            {
+                return pair.Key;
+            }
+        }
+
+        return null;
     }
 }

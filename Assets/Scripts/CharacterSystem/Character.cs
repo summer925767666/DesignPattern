@@ -56,10 +56,8 @@ public abstract class Character
             _Weapon = value;
             _Weapon.Owner = this;
             Transform weaponPoint = _GameObject.transform.Find
-            ("Rookie/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2" +
+            ("Bone/Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2" +
              "/Bip001 Neck/Bip001 R Clavicle/Bip001 R UpperArm/Bip001 R Forearm/Bip001 R Hand/weapon-point");
-            _Weapon.GameObject.transform.SetParent(_GameObject.transform);
-            _Weapon.GameObject.transform.localPosition = Vector3.zero;
             _Weapon.GameObject.transform.AttachTo(weaponPoint);
 
         }

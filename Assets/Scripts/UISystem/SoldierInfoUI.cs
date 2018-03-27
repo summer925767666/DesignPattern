@@ -1,9 +1,15 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class SoldierInfoUI:UISystem
+public class SoldierInfoUI : UISystem
 {
+    private Transform root;
+
+    public override Transform Root
+    {
+        get { return root ?? (root = GameObject.Find("Canvas").transform.Find("SoldierInfo")); }
+    }
+
     private Image soldierIcon;
     private Text soldierName;
     private Text soldierHP;
@@ -13,21 +19,16 @@ public class SoldierInfoUI:UISystem
     private Text soldierAtk;
     private Text soldierAtkRange;
 
-    public override void Init()
+    protected override void Start()
     {
-        Root = GameObject.Find("Canvas").transform.Find("SoldierInfo").gameObject;
-
-        Transform root = Root.transform;
-        soldierIcon=root.Find("SoldierIcon").GetComponent<Image>();
-        soldierName = root.Find("SoldierName").GetComponent<Text>();
-        soldierHP = root.Find("SoldierHP").GetComponent<Text>();
-        soldierHPsSlider = root.Find("HPSlider").GetComponent<Slider>();
-        soldierLv = root.Find("SoldierLv").GetComponent<Text>();
-        soldierSpeed = root.Find("SoldierSpeed").GetComponent<Text>();
-        soldierAtk = root.Find("SoldierAtk").GetComponent<Text>();
-        soldierAtkRange = root.Find("SoldierAtkRange").GetComponent<Text>();
-
-
+        soldierIcon = Root.Find("SoldierIcon").GetComponent<Image>();
+        soldierName = Root.Find("SoldierName").GetComponent<Text>();
+        soldierHP = Root.Find("SoldierHP").GetComponent<Text>();
+        soldierHPsSlider = Root.Find("HPSlider").GetComponent<Slider>();
+        soldierLv = Root.Find("SoldierLv").GetComponent<Text>();
+        soldierSpeed = Root.Find("SoldierSpeed").GetComponent<Text>();
+        soldierAtk = Root.Find("SoldierAtk").GetComponent<Text>();
+        soldierAtkRange = Root.Find("SoldierAtkRange").GetComponent<Text>();
     }
 
     public override void Update()

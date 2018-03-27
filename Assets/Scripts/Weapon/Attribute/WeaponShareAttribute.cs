@@ -4,7 +4,7 @@
     public int Atk { get; private set; } //攻击力
     public float AtkRange { get; private set; }//攻击范围
     public string AssetName { get; private set; }//资源名
-    public int Lv { get; private set; }
+    public int Lv { get; private set; }//等级
 
     public WeaponShareAttribute(string name, int atk, float atkRange, string assetName,int lv)
     {

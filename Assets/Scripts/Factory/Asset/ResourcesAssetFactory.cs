@@ -22,6 +22,7 @@ public class ResourcesAssetFactory : IAssetFactory
 
     public GameObject LoadWeapon(string name)
     {
+
         return Instantiate(WeaponPath + name);
     }
 
@@ -37,7 +38,6 @@ public class ResourcesAssetFactory : IAssetFactory
 
     public Sprite LoadSprite(string name)
     {
-        Debug.Log(SpritePath + name);
         return Resources.Load<Sprite>(SpritePath + name);
     }
 

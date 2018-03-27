@@ -27,8 +27,6 @@
         get { return enemyFactory ?? (enemyFactory = new EnemyFactory()); }
     }
 
-
-
     public static WeaponFactory WeaponFactory
     {
         get { return weaponFactory ?? (weaponFactory = new WeaponFactory()); }
@@ -38,6 +36,5 @@
     {
         get { return attributeFactory ?? (attributeFactory = new AttributeFactory()); }
     }
-
 }
 

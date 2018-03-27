@@ -232,6 +232,10 @@
     <Compile Include="Assets\Scripts\BassClass\IGameSystem.cs" />
     <Compile Include="Assets\Scripts\CampSystem\BaseCamp.cs" />
     <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\Command\SoldierTrainCmd.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\Command\Command.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\IEnergyStrategy.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\SoldierEnergyStartegy.cs" />
     <Compile Include="Assets\Scripts\CampSystem\SoldierCamp.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Attribute\CharacterAttribute.cs" />
     <Compile Include="Assets\Scripts\CharacterSystem\Attribute\EnemyAttribute.cs" />
