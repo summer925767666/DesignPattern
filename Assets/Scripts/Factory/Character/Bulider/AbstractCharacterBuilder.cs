@@ -29,12 +29,7 @@ public abstract class AbstractCharacterBuilder
     public abstract void BuildAttribute();
 
     //2、实例化游戏体
-    public void BuildGameObject()
-    {
-        GameObject go = FactoryManger.AssetFactory.LoadSoldier(Character.Attribute.PrefabName);
-        go.transform.position = SpawnPos;
-        Character.GameObject = go;
-    }
+    public abstract void BuildGameObject();
 
     //3、实例化武器
     public  void BuildWeapon()

@@ -13,5 +13,12 @@ public class SoldierBuilder: AbstractCharacterBuilder
         CharacterAttribute attribute = new SoldierAttribute(FactoryManger.AttributeFactory.GetCharShareAttribute(base.CharacterType), base.Lv);
         base.Character.Attribute = attribute;
     }
+
+    public override void BuildGameObject()
+    {
+        GameObject go = FactoryManger.AssetFactory.LoadSoldier(Character.Attribute.PrefabName);
+        go.transform.position = SpawnPos;
+        Character.GameObject = go;
+    }
 }
 

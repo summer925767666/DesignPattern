@@ -35,11 +35,11 @@ public class AttributeFactory
             },
             {
                 typeof(EnemyOgre),
-                new CharShareAttribute("怪物", 120, 2, "CaptainIcon", "Soldier1", 0.3f, new EnemyAttributeStrategy())
+                new CharShareAttribute("怪物", 120, 2, "CaptainIcon", "Enemy2", 0.3f, new EnemyAttributeStrategy())
             },
             {
                 typeof(EnemyElf),
-                new CharShareAttribute("小精灵", 100, 3, "CaptainIcon", "Soldier1", 0.2f, new EnemyAttributeStrategy())
+                new CharShareAttribute("小精灵", 100, 3, "CaptainIcon", "Enemy1", 0.2f, new EnemyAttributeStrategy())
             }
         };
     }

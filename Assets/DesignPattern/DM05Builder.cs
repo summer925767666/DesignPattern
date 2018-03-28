@@ -61,27 +61,23 @@ public class ThinBuilder:IBuilder
 {
     public void BuildHead()
     {
-        throw new NotImplementedException();
     }
 
     public void BuildBody()
     {
-        throw new NotImplementedException();
     }
 
     public void BuildFoot()
     {
-        throw new NotImplementedException();
     }
 
     public void BuildHand()
     {
-        throw new NotImplementedException();
     }
 
     public Person GetPerson()
     {
-        throw new NotImplementedException();
+        return null;
     }
 }
 

@@ -2,7 +2,7 @@
 {
     protected override void PlayDeathSound()
     {
-        base.PlaySound("death");
+        base.PlaySound("CaptainDeath");
     }
 
     protected override void PlayDeathEffect()

@@ -133,7 +133,6 @@ public class FSMSystem
             currentState = s;
             currentStateID = s.ID;
 
-            //todo
             currentState.DoBeforeEntering();
             return;
         }

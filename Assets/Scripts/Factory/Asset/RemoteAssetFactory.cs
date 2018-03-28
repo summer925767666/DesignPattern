@@ -6,33 +6,39 @@ public class RemoteAssetFactory:IAssetFactory
 {
     public GameObject LoadSoldier(string name)
     {
-        throw new NotImplementedException();
+        return null;
+
     }
 
     public GameObject LoadEnemy(string name)
     {
-        throw new NotImplementedException();
+        return null;
+
     }
 
     public GameObject LoadWeapon(string name)
     {
-        throw new NotImplementedException();
+        return null;
+
     }
 
     public GameObject LoadEffect(string name)
     {
-        throw new NotImplementedException();
+        return null;
+
     }
 
 
     public AudioClip LoadAudioClip(string name)
     {
-        throw new NotImplementedException();
+        return null;
+
     }
 
     public Sprite LoadSprite(string name)
     {
-        throw new NotImplementedException();
+        return null;
+
     }
 }
 

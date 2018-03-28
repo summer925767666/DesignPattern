@@ -7,11 +7,20 @@ public class EnemyBuilder:AbstractCharacterBuilder
     {
     }
 
+
+
     public override void BuildAttribute()
     {
         //1、实例化数值属性
         CharacterAttribute attribute = new EnemyAttribute(FactoryManger.AttributeFactory.GetCharShareAttribute(base.CharacterType), base.Lv);
         base.Character.Attribute = attribute;
+    }
+
+    public override void BuildGameObject()
+    {
+        GameObject go = FactoryManger.AssetFactory.LoadEnemy(Character.Attribute.PrefabName);
+        go.transform.position = SpawnPos;
+        Character.GameObject = go;
     }
 }
 

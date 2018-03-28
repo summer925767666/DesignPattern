@@ -3,12 +3,11 @@
 
     protected override void PlayDeathSound()
     {
-        throw new System.NotImplementedException();
+        base.PlaySound("RookieDeath");
     }
 
     protected override void PlayDeathEffect()
     {
-        throw new System.NotImplementedException();
     }
 }
 

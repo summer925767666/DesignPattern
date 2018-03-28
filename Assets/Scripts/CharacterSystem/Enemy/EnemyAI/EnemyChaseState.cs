@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using UnityEngine;
 
 public class EnemyChaseState : EnemyState
@@ -14,7 +11,7 @@ public class EnemyChaseState : EnemyState
 
     public override void DoBeforeEntering()
     {
-        targetPos = Vector3.zero; //todo,关卡系统赋值目标位置
+        targetPos = GameFacade.Instance.StageSystem.EnemyTarget;
     }
 
 

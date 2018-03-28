@@ -29,6 +29,8 @@ public class GameFacade
     public CharacterSystem CharacterSystem { get { return characterSystem; } }
     public EnergySystem EnergySystem { get { return energySystem; } }
 
+    public StageSystem StageSystem { get { return stageSystem; } }
+
     public void Init()
     {
         systemList=new List<IGameSystem>();

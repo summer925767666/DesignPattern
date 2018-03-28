@@ -2,9 +2,9 @@
 
 public class CharacterSystem:IGameSystem
 {
+    private int deadEnemyCount = 0;
     private List<Enemy> enemies=new List<Enemy>();
     private List<Soldier> soldiers=new List<Soldier>();
-
 
     public void Init()
     {
@@ -36,6 +36,7 @@ public class CharacterSystem:IGameSystem
 
     public void RemoveEnemy(Enemy enemy)
     {
+        deadEnemyCount++;
         enemies.Remove(enemy);
     }
 

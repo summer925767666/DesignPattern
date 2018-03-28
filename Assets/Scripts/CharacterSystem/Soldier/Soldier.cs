@@ -1,9 +1,5 @@
-﻿using System;
-
-public abstract class Soldier : Character
+﻿public abstract class Soldier : Character
 {
-
-
     protected SoldierFSMSystem Fsm;
 
     protected Soldier()
@@ -13,6 +9,9 @@ public abstract class Soldier : Character
 
     public void UpdateFSM(SoldierStateData data)
     {
+//        if (base.IsDead) return;
+
+
         Fsm.Reason(data);
         Fsm.Act(data);
     }
@@ -40,13 +39,12 @@ public abstract class Soldier : Character
         base.TakeDamage(dmg);
 
         //判断是否死亡
-        if (base._Attribute.CurrentHp <= 0)
-        {
-            PlayDeathEffect();
-            PlayDeathSound();
+        if (base._Attribute.CurrentHp > 0) return;
 
-            base.Die();
-        }
+//            PlayDeathEffect();
+        PlayDeathSound();
+        base.Die();
+        GameFacade.Instance.CharacterSystem.RemoveSoldier(this);
     }
 
     protected abstract void PlayDeathSound();//没有必要使用多态，模版方法，只需要一个参数就可以，这里是为了学习而学习

@@ -228,6 +228,7 @@
     <Compile Include="Assets\DesignPattern\DM05Builder.cs" />
     <Compile Include="Assets\DesignPattern\DM06Composite.cs" />
     <Compile Include="Assets\DesignPattern\DM07Command.cs" />
+    <Compile Include="Assets\DesignPattern\DM08ChainOfResponsibility.cs" />
     <Compile Include="Assets\Scripts\ArchievementSystem\ArchievementSystem.cs" />
     <Compile Include="Assets\Scripts\BassClass\IGameSystem.cs" />
     <Compile Include="Assets\Scripts\CampSystem\BaseCamp.cs" />
@@ -270,11 +271,9 @@
     <Compile Include="Assets\Scripts\Factory\Asset\ResourcesAssetFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Attribute\AttributeFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\Bulider\AbstractCharacterBuilder.cs" />
-    <Compile Include="Assets\Scripts\Factory\Character\Bulider\CharacterBuilder.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\Bulider\CharacterDirector.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\Bulider\EnemyBuilder.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\Bulider\SoldierBuilder.cs" />
-    <Compile Include="Assets\Scripts\Factory\Character\CharacterFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\EnemyFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\ICharacterFactory.cs" />
     <Compile Include="Assets\Scripts\Factory\Character\SoldierFactory.cs" />
@@ -289,6 +288,8 @@
     <Compile Include="Assets\Scripts\SceneState\MainMenuState.cs" />
     <Compile Include="Assets\Scripts\SceneState\SceneStateController.cs" />
     <Compile Include="Assets\Scripts\SceneState\StartState.cs" />
+    <Compile Include="Assets\Scripts\StageSystem\Handler\NormalStageHandler.cs" />
+    <Compile Include="Assets\Scripts\StageSystem\Handler\StageHandler.cs" />
     <Compile Include="Assets\Scripts\StageSystem\StageSystem.cs" />
     <Compile Include="Assets\Scripts\Tools\UITool.cs" />
     <Compile Include="Assets\Scripts\Tools\UnityTool.cs" />

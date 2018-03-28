@@ -17,6 +17,9 @@ public abstract class Character
     //武器
     protected Weapon _Weapon;
 
+    protected bool IsDead { get; private set; }
+    protected float DestroyTimer = 2f;
+
     #endregion
 
     #region Public属性
@@ -92,7 +95,9 @@ public abstract class Character
     //死亡
     protected void Die()
     {
-
+        IsDead = true;
+        _NavMeshAgent.isStopped = true;
+        Object.Destroy(_GameObject, DestroyTimer);
     }
 
     #endregion
