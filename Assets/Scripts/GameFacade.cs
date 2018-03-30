@@ -21,7 +21,7 @@ public class GameFacade
 
     private List<IGameSystem> systemList;
 
-    private ArchievementSystem archievementSystem;
+    private AchievementSystem achievementSystem;
     private CampSystem campSystem;
     private CharacterSystem characterSystem;
     private EnergySystem energySystem;
@@ -67,7 +67,7 @@ public class GameFacade
     {
         systemList = new List<IGameSystem>();
 
-        archievementSystem = new ArchievementSystem();
+        achievementSystem = new AchievementSystem();
         campSystem = new CampSystem();
         characterSystem = new CharacterSystem();
         energySystem = new EnergySystem();
@@ -79,7 +79,7 @@ public class GameFacade
         gameStateInfoUI = new GameStateInfoUI();
         soldierInfoUI = new SoldierInfoUI();
 
-        systemList.Add(archievementSystem);
+        systemList.Add(achievementSystem);
         systemList.Add(campSystem);
         systemList.Add(characterSystem);
         systemList.Add(energySystem);
@@ -92,6 +92,10 @@ public class GameFacade
         systemList.Add(soldierInfoUI);
 
         systemList.ForEach(s => s.Init());
+
+        
+        IMemento memento = CareTaker.RetrieveMemento();//取回备忘录
+        achievementSystem.RestoreMemento(memento);//根据备忘录，恢复成就系统
     }
 
     public void Update()
@@ -102,5 +106,9 @@ public class GameFacade
     public void Release()
     {
         systemList.ForEach(s => s.Release());
+
+        IMemento memento = achievementSystem.CreateMemento();//成就系统创建备忘录
+        CareTaker.SaveMemento(memento);//保存到备忘录
     }
+
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/01StateScene.unity
+- path: Assets/DesignPattern/DesignPattern.unity
   isLoaded: 1
   isActive: 1

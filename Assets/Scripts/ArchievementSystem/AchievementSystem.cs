@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ArchievementSystem : IGameSystem
+public class AchievementSystem : IGameSystem
 {
     private class Enemy : IGameObserver
     {
@@ -14,7 +14,6 @@ public class ArchievementSystem : IGameSystem
 
         public void Test()
         {
-            
         }
     }
 
@@ -44,13 +43,13 @@ public class ArchievementSystem : IGameSystem
     private Soldier soldier = new Soldier();
     private Stage stage = new Stage();
 
+//    private CareTaker careTaker;
+
     public void Init()
     {
         GameFacade.Instance.EventSystem.Register(typeof(EnemyKilledSubject), enemy);
         GameFacade.Instance.EventSystem.Register(typeof(SoldierKilledSubject), soldier);
         GameFacade.Instance.EventSystem.Register(typeof(StageSubject), stage);
-
-        LoadData();
     }
 
     public void Update()
@@ -59,30 +58,50 @@ public class ArchievementSystem : IGameSystem
 
     public void Release()
     {
-        SaveData();
     }
 
-    private void SaveData()
+    public Memento CreateMemento()
     {
-        AchievementMemento memento = new AchievementMemento
+        Memento memento = new Memento
         {
             EnemyKilledCount = enemy.EnemyKilledCount,
             SoldierKilledCount = soldier.SoldierKilledCount,
             MaxStageLv = stage.MaxStageLv
         };
 
-        memento.SaveData();
+        return memento;
     }
 
-    public void LoadData()
+    public void RestoreMemento(IMemento m)
     {
-        AchievementMemento memento=new AchievementMemento();
-        memento.LoadData();
+        Memento memento = m as Memento;
+        if (memento == null) return;
+
 
         enemy.EnemyKilledCount = memento.EnemyKilledCount;
         soldier.SoldierKilledCount = memento.SoldierKilledCount;
         stage.MaxStageLv = memento.MaxStageLv;
     }
 
+    //备忘录的宽接口
+    public class Memento : IMemento
+    {
+        public int EnemyKilledCount { get; set; }
+        public int SoldierKilledCount { get; set; }
+        public int MaxStageLv { get; set; }
 
+        public void SaveToLocal()
+        {
+            PlayerPrefs.SetInt("EnemyKilledCount", EnemyKilledCount);
+            PlayerPrefs.SetInt("SoldierKilledCount", SoldierKilledCount);
+            PlayerPrefs.SetInt("MaxStageLv", MaxStageLv);
+        }
+
+        public void LoadFromLocal()
+        {
+            EnemyKilledCount = PlayerPrefs.GetInt("EnemyKilledCount");
+            SoldierKilledCount = PlayerPrefs.GetInt("SoldierKilledCount");
+            MaxStageLv = PlayerPrefs.GetInt("MaxStageLv",1);
+        }
+    }
 }
