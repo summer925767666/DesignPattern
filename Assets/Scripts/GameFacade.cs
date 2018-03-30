@@ -5,9 +5,18 @@
 public class GameFacade
 {
     #region 单例实现
+
     private static GameFacade instance = new GameFacade();
-    public static GameFacade Instance { get { return instance; } }
-    private GameFacade() { }
+
+    public static GameFacade Instance
+    {
+        get { return instance; }
+    }
+
+    private GameFacade()
+    {
+    }
+
     #endregion
 
     private List<IGameSystem> systemList;
@@ -24,28 +33,51 @@ public class GameFacade
     private GameStateInfoUI gameStateInfoUI;
     private SoldierInfoUI soldierInfoUI;
 
-    public CampInfoUI CampInfoUI { get { return campInfoUI; } }
-    public GameStateInfoUI GameStateInfoUI { get { return gameStateInfoUI; } }
-    public CharacterSystem CharacterSystem { get { return characterSystem; } }
-    public EnergySystem EnergySystem { get { return energySystem; } }
+    public CampInfoUI CampInfoUI
+    {
+        get { return campInfoUI; }
+    }
 
-    public StageSystem StageSystem { get { return stageSystem; } }
+    public GameStateInfoUI GameStateInfoUI
+    {
+        get { return gameStateInfoUI; }
+    }
+
+    public CharacterSystem CharacterSystem
+    {
+        get { return characterSystem; }
+    }
+
+    public EnergySystem EnergySystem
+    {
+        get { return energySystem; }
+    }
+
+    public StageSystem StageSystem
+    {
+        get { return stageSystem; }
+    }
+
+    public GameEventSystem EventSystem
+    {
+        get { return gameEventSystem; }
+    }
 
     public void Init()
     {
-        systemList=new List<IGameSystem>();
+        systemList = new List<IGameSystem>();
 
-        archievementSystem=new ArchievementSystem();
-        campSystem=new CampSystem();
+        archievementSystem = new ArchievementSystem();
+        campSystem = new CampSystem();
         characterSystem = new CharacterSystem();
-        energySystem=new EnergySystem();
-        gameEventSystem=new GameEventSystem();
-        stageSystem=new StageSystem();
+        energySystem = new EnergySystem();
+        gameEventSystem = new GameEventSystem();
+        stageSystem = new StageSystem();
 
-        campInfoUI=new CampInfoUI();
-        gamePauseUI=new GamePauseUI();
-        gameStateInfoUI=new GameStateInfoUI();
-        soldierInfoUI=new SoldierInfoUI();
+        campInfoUI = new CampInfoUI();
+        gamePauseUI = new GamePauseUI();
+        gameStateInfoUI = new GameStateInfoUI();
+        soldierInfoUI = new SoldierInfoUI();
 
         systemList.Add(archievementSystem);
         systemList.Add(campSystem);
@@ -59,7 +91,7 @@ public class GameFacade
         systemList.Add(gameStateInfoUI);
         systemList.Add(soldierInfoUI);
 
-        systemList.ForEach(s=>s.Init());
+        systemList.ForEach(s => s.Init());
     }
 
     public void Update()
@@ -71,5 +103,4 @@ public class GameFacade
     {
         systemList.ForEach(s => s.Release());
     }
-
 }

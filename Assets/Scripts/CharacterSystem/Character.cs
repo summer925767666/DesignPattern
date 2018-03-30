@@ -98,6 +98,8 @@ public abstract class Character
         IsDead = true;
         _NavMeshAgent.isStopped = true;
         Object.Destroy(_GameObject, DestroyTimer);
+
+        
     }
 
     #endregion

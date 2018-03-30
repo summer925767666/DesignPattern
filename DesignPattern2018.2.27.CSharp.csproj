@@ -229,12 +229,14 @@
     <Compile Include="Assets\DesignPattern\DM06Composite.cs" />
     <Compile Include="Assets\DesignPattern\DM07Command.cs" />
     <Compile Include="Assets\DesignPattern\DM08ChainOfResponsibility.cs" />
+    <Compile Include="Assets\DesignPattern\DM09Abserver.cs" />
+    <Compile Include="Assets\Scripts\ArchievementSystem\AchievementMemento.cs" />
     <Compile Include="Assets\Scripts\ArchievementSystem\ArchievementSystem.cs" />
     <Compile Include="Assets\Scripts\BassClass\IGameSystem.cs" />
     <Compile Include="Assets\Scripts\CampSystem\BaseCamp.cs" />
     <Compile Include="Assets\Scripts\CampSystem\CampSystem.cs" />
-    <Compile Include="Assets\Scripts\CampSystem\Command\SoldierTrainCmd.cs" />
     <Compile Include="Assets\Scripts\CampSystem\Command\Command.cs" />
+    <Compile Include="Assets\Scripts\CampSystem\Command\SoldierTrainCmd.cs" />
     <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\IEnergyStrategy.cs" />
     <Compile Include="Assets\Scripts\CampSystem\EnergyStrategy\SoldierEnergyStartegy.cs" />
     <Compile Include="Assets\Scripts\CampSystem\SoldierCamp.cs" />
@@ -280,7 +282,12 @@
     <Compile Include="Assets\Scripts\Factory\FactoryManger.cs" />
     <Compile Include="Assets\Scripts\Factory\Weapon\WeaponFactory.cs" />
     <Compile Include="Assets\Scripts\FSM\FiniteStateMachine.cs" />
+    <Compile Include="Assets\Scripts\GameEventSystem\Base\IGameObserver.cs" />
+    <Compile Include="Assets\Scripts\GameEventSystem\Base\GameSubject.cs" />
     <Compile Include="Assets\Scripts\GameEventSystem\GameEventSystem.cs" />
+    <Compile Include="Assets\Scripts\GameEventSystem\Subject\EnemyKilledSubject.cs" />
+    <Compile Include="Assets\Scripts\GameEventSystem\Subject\SoldierKilledSubject.cs" />
+    <Compile Include="Assets\Scripts\GameEventSystem\Subject\StageSubject.cs" />
     <Compile Include="Assets\Scripts\GameFacade.cs" />
     <Compile Include="Assets\Scripts\GameLoop.cs" />
     <Compile Include="Assets\Scripts\SceneState\BaseSceneState.cs" />
@@ -305,5 +312,6 @@
     <Compile Include="Assets\Scripts\Weapon\WeaponRocket.cs" />
     <Compile Include="Assets\Test\Test.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

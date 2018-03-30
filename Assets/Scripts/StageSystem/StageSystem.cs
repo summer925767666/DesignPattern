@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class StageSystem : IGameSystem
+public class StageSystem : IGameSystem,IGameObserver
 {
-    private int lv = 1;
-    private Vector3 target;
-    private List<Vector3> spawnPosList = new List<Vector3>();
-
-    private StageHandler rootHandler;
+    private int lv = 1;//当前关卡
+    private StageHandler rootHandler;//责任链的根节点
+    private Vector3 target;//敌人移动的目标点
+    private List<Vector3> spawnPosList = new List<Vector3>();//出生点
+    private int killedEnemyCount = 0;
 
     public Vector3 EnemyTarget { get { return target; } }
 
@@ -18,6 +18,8 @@ public class StageSystem : IGameSystem
 
         //初始化关卡
         InitStageChain();
+
+        GameFacade.Instance.EventSystem.Register(typeof(EnemyKilledSubject),this);
     }
 
     public void Update()
@@ -77,12 +79,17 @@ public class StageSystem : IGameSystem
 
     public int GetDeadEnermyCount()
     {
-        //todo,获取死亡的敌人个数
-        return 0;
+       return killedEnemyCount;
     }
 
     public void EnterNextStage()
     {
         lv++;
+        GameFacade.Instance.EventSystem.Notify(typeof(StageSubject),lv);
+    }
+
+    public void Update(params object[] para)
+    {
+        killedEnemyCount =  (int) para[0];
     }
 }
