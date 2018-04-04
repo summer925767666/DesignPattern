@@ -1,7 +1,7 @@
 ﻿public class EnemyTroll:Enemy
 {
-    protected override void PlayDmgEffect()
-    {
-    }
+//    protected override void PlayDmgEffect()
+//    {
+//    }
 }
 

@@ -6,8 +6,8 @@
         base.PlaySound("SergeantDeath");
     }
 
-    protected override void PlayDeathEffect()
-    {
-    }
+//    protected override void PlayDeathEffect()
+//    {
+//    }
 }
 

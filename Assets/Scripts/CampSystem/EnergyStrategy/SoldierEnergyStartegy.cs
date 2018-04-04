@@ -66,6 +66,8 @@ public class SoldierEnergyStartegy : IEnergyStrategy
             case "SoldierCaptain":
                 energy = 20;
                 break;
+            case "SoldierCaptive"://俘兵直接返回10点消耗
+                return 10;
             default:
                 Debug.LogError("升级士兵消耗,类型错误：" + soldierType);
                 break;

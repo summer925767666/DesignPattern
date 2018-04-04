@@ -9,11 +9,6 @@ public class AchievementSystem : IGameSystem
         public void Update(params object[] para)
         {
             EnemyKilledCount++;
-            Debug.Log("敌人" + EnemyKilledCount);
-        }
-
-        public void Test()
-        {
         }
     }
 
@@ -24,7 +19,6 @@ public class AchievementSystem : IGameSystem
         public void Update(params object[] para)
         {
             SoldierKilledCount++;
-            Debug.Log("士兵" + SoldierKilledCount);
         }
     }
 
@@ -35,7 +29,6 @@ public class AchievementSystem : IGameSystem
         public void Update(params object[] para)
         {
             MaxStageLv = Mathf.Max(MaxStageLv, (int) para[0]);
-            Debug.Log("关卡" + MaxStageLv);
         }
     }
 

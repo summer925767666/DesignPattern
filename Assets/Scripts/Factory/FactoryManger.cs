@@ -9,7 +9,8 @@
 
     public static IAssetFactory AssetFactory
     {
-        get { return assetFactory ?? (assetFactory = new ResourcesAssetFactory()); }
+//        get { return assetFactory ?? (assetFactory = new ResourcesAssetFactory()); }
+        get { return assetFactory ?? (assetFactory = new ResAssetFactoryProxy()); }
     }
 
 //    public static CharacterFactory CharacterFactory

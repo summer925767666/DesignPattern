@@ -2,7 +2,7 @@
 
 public class GameLoop : MonoBehaviour
 {
-    private SceneStateController controller;
+    private SceneStateController controller;        
 
     private void Awake()
     {

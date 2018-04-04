@@ -4,35 +4,45 @@ using UnityEngine;
 
 public class CampSystem : IGameSystem
 {
-    private Dictionary<Type, BaseCamp> camps = new Dictionary<Type, BaseCamp>();
+    private readonly Dictionary<Type, BaseCamp> captiveCamps = new Dictionary<Type, BaseCamp>();
+    private readonly Dictionary<Type, BaseCamp> soldierCamps = new Dictionary<Type, BaseCamp>();
+
 
     public void Init()
     {
-        IniCamp(typeof(SoldierRookie), "新手兵营", "RookieCamp", 3);
-        IniCamp(typeof(SoldierSergeant), "中士兵营", "SergeantCamp", 4);
-        IniCamp(typeof(SoldierCaptain), "上尉兵营", "CaptainCamp", 5);
+        IniSoldierCamp(typeof(SoldierRookie), "新手兵营", "RookieCamp", 3);
+        IniSoldierCamp(typeof(SoldierSergeant), "中士兵营", "SergeantCamp", 4);
+        IniSoldierCamp(typeof(SoldierCaptain), "上尉兵营", "CaptainCamp", 5);
+        IniCaptiveCamp(typeof(EnemyElf), "CaptiveCamp", 3);
     }
 
     public void Update()
     {
-        foreach (var camp in camps.Values)
-        {
-            camp.Update();
-        }
+        foreach (var camp in soldierCamps.Values) camp.Update();
+        foreach (var captiveCamp in captiveCamps.Values) { captiveCamp.Update(); }
     }
 
-    public void Release()
-    {
-    }
+    public void Release() { }
 
-    private void IniCamp(Type soldierType, string name, string iconName, float trainTime)
+    private void IniSoldierCamp(Type soldierType, string name, string iconName, float trainTime)
     {
-        GameObject go = GameObject.Find("Camps").transform.Find(soldierType.ToString()).gameObject;
-        Vector3 pos = go.transform.Find("Camp/TrainPoint").position;
-        BaseCamp camp = new SoldierCamp(go, name, iconName, soldierType, pos, trainTime);
+        var go = GameObject.Find("Camps").transform.Find(soldierType.ToString()).gameObject;
+        var spawnPos = go.transform.Find("Camp/TrainPoint").position;
+        BaseCamp camp = new SoldierCamp(name, iconName, soldierType, spawnPos, trainTime);
 
         go.AddComponent<CampOnClick>().Camp = camp; //添加点击事件监测脚本
 
-        camps.Add(soldierType, camp);
+        soldierCamps.Add(soldierType, camp);
+    }
+
+    private void IniCaptiveCamp(Type enemyType, string iconName, float trainTime)
+    {
+        var go = GameObject.Find("Camps").transform.Find(enemyType.ToString()).gameObject;
+        var spawnPos = go.transform.Find("Camp/TrainPoint").position;
+        BaseCamp camp = new CaptiveCamp(iconName, enemyType, spawnPos, trainTime);
+
+        go.AddComponent<CampOnClick>().Camp = camp; //添加点击事件监测脚本
+
+        captiveCamps.Add(enemyType, camp);
     }
 }

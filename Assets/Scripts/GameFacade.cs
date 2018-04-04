@@ -4,111 +4,83 @@
 //对于各游戏系统来说（内部），Facade承担了中介者
 public class GameFacade
 {
+    private AchievementSystem achievementSystem;
+
+    private CampSystem campSystem;
+    private GamePauseUI gamePauseUI;
+    private SoldierInfoUI soldierInfoUI;
+
+    private List<IGameSystem> systems;
+
+    public CampInfoUI CampInfoUI { get; private set; }
+
+    public GameStateInfoUI GameStateInfoUI { get; private set; }
+
+    public CharacterSystem CharacterSystem { get; private set; }
+
+    public EnergySystem EnergySystem { get; private set; }
+
+    public StageSystem StageSystem { get; private set; }
+
+    public GameEventSystem EventSystem { get; private set; }
+
+    public void Init()
+    {
+        systems = new List<IGameSystem>();
+
+        achievementSystem = new AchievementSystem();
+        campSystem = new CampSystem();
+        CharacterSystem = new CharacterSystem();
+        EnergySystem = new EnergySystem();
+        EventSystem = new GameEventSystem();
+        StageSystem = new StageSystem();
+
+        CampInfoUI = new CampInfoUI();
+        gamePauseUI = new GamePauseUI();
+        GameStateInfoUI = new GameStateInfoUI();
+        soldierInfoUI = new SoldierInfoUI();
+
+        systems.Add(achievementSystem);
+        systems.Add(campSystem);
+        systems.Add(CharacterSystem);
+        systems.Add(EnergySystem);
+        systems.Add(EventSystem);
+        systems.Add(StageSystem);
+
+        systems.Add(CampInfoUI);
+        systems.Add(gamePauseUI);
+        systems.Add(GameStateInfoUI);
+        systems.Add(soldierInfoUI);
+
+        systems.ForEach(s => s.Init());
+
+
+        var memento = CareTaker.RetrieveMemento(); //取回备忘录
+        achievementSystem.RestoreMemento(memento); //根据备忘录，恢复成就系统
+    }
+
+    public void Update()
+    {
+        systems.ForEach(s => s.Update());
+    }
+
+    public void Release()
+    {
+        systems.ForEach(s => s.Release());
+
+        IMemento memento = achievementSystem.CreateMemento(); //成就系统创建备忘录
+        CareTaker.SaveMemento(memento); //保存到备忘录
+    }
+
     #region 单例实现
 
-    private static GameFacade instance = new GameFacade();
+    private static readonly GameFacade instance = new GameFacade();
 
-    public static GameFacade Instance
-    {
-        get { return instance; }
-    }
+    public static GameFacade Instance { get { return instance; } }
 
     private GameFacade()
     {
     }
 
     #endregion
-
-    private List<IGameSystem> systemList;
-
-    private AchievementSystem achievementSystem;
-    private CampSystem campSystem;
-    private CharacterSystem characterSystem;
-    private EnergySystem energySystem;
-    private GameEventSystem gameEventSystem;
-    private StageSystem stageSystem;
-
-    private CampInfoUI campInfoUI;
-    private GamePauseUI gamePauseUI;
-    private GameStateInfoUI gameStateInfoUI;
-    private SoldierInfoUI soldierInfoUI;
-
-    public CampInfoUI CampInfoUI
-    {
-        get { return campInfoUI; }
-    }
-
-    public GameStateInfoUI GameStateInfoUI
-    {
-        get { return gameStateInfoUI; }
-    }
-
-    public CharacterSystem CharacterSystem
-    {
-        get { return characterSystem; }
-    }
-
-    public EnergySystem EnergySystem
-    {
-        get { return energySystem; }
-    }
-
-    public StageSystem StageSystem
-    {
-        get { return stageSystem; }
-    }
-
-    public GameEventSystem EventSystem
-    {
-        get { return gameEventSystem; }
-    }
-
-    public void Init()
-    {
-        systemList = new List<IGameSystem>();
-
-        achievementSystem = new AchievementSystem();
-        campSystem = new CampSystem();
-        characterSystem = new CharacterSystem();
-        energySystem = new EnergySystem();
-        gameEventSystem = new GameEventSystem();
-        stageSystem = new StageSystem();
-
-        campInfoUI = new CampInfoUI();
-        gamePauseUI = new GamePauseUI();
-        gameStateInfoUI = new GameStateInfoUI();
-        soldierInfoUI = new SoldierInfoUI();
-
-        systemList.Add(achievementSystem);
-        systemList.Add(campSystem);
-        systemList.Add(characterSystem);
-        systemList.Add(energySystem);
-        systemList.Add(gameEventSystem);
-        systemList.Add(stageSystem);
-
-        systemList.Add(campInfoUI);
-        systemList.Add(gamePauseUI);
-        systemList.Add(gameStateInfoUI);
-        systemList.Add(soldierInfoUI);
-
-        systemList.ForEach(s => s.Init());
-
-        
-        IMemento memento = CareTaker.RetrieveMemento();//取回备忘录
-        achievementSystem.RestoreMemento(memento);//根据备忘录，恢复成就系统
-    }
-
-    public void Update()
-    {
-        systemList.ForEach(s => s.Update());
-    }
-
-    public void Release()
-    {
-        systemList.ForEach(s => s.Release());
-
-        IMemento memento = achievementSystem.CreateMemento();//成就系统创建备忘录
-        CareTaker.SaveMemento(memento);//保存到备忘录
-    }
-
 }

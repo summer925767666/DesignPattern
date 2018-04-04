@@ -33,10 +33,10 @@
 
     protected sealed override void TakeDamage(int dmg)
     {
-        base.TakeDamage(dmg);
+        base.Attribute.TakeDamage(dmg);
 
         //判断是否死亡
-        if (base._Attribute.CurrentHp > 0) return;
+        if (base.Attribute.CurrentHp > 0) return;
 
         PlayDeathSound();
         base.Die();
@@ -45,5 +45,10 @@
     }
 
     protected abstract void PlayDeathSound();//没有必要使用多态，模版方法，只需要一个参数就可以，这里是为了学习而学习
-    protected abstract void PlayDeathEffect();
+//    protected abstract void PlayDeathEffect();
+
+    public override void RunVisitor(CharacterVisitor visitor)
+    {
+        visitor.VisitSoldier(this);
+    }
 }

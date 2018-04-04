@@ -1,7 +1,7 @@
 ﻿public class EnemyOgre:Enemy
 {
-    protected override void PlayDmgEffect()
-    {
-    }
+//    protected override void PlayDmgEffect()
+//    {
+//    }
 }
 

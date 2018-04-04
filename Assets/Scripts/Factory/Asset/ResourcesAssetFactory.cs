@@ -3,12 +3,12 @@ using Object = UnityEngine.Object;
 
 public class ResourcesAssetFactory : IAssetFactory
 {
-    private const string SoldierPath = "Characters/Soldier/";
-    private const string EnemyrPath = "Characters/Enemy/";
-    private const string WeaponPath = "Weapons/";
-    private const string EffectPath = "Effects/";
-    private const string AudioPath = "Audios/";
-    private const string SpritePath = "Sprites/";
+    public const string SoldierPath = "Characters/Soldier/";
+    public const string EnemyrPath = "Characters/Enemy/";
+    public const string WeaponPath = "Weapons/";
+    public const string EffectPath = "Effects/";
+    public const string AudioPath = "Audios/";
+    public const string SpritePath = "Sprites/";
 
     public GameObject LoadSoldier(string name)
     {
@@ -47,7 +47,7 @@ public class ResourcesAssetFactory : IAssetFactory
         return Object.Instantiate(go);
     }
 
-    private Object LoadAsset(string path)
+    public Object LoadAsset(string path)
     {
         Object obj = Resources.Load(path);
         if (obj == null) Debug.LogError("加载资源失败:" + path);

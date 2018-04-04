@@ -23,9 +23,9 @@ public class StateContext
 {
     private IState state;
 
-    public void SetState(IState state)
+    public void SetState(IState s)
     {
-        this.state = state;
+        state = s;
     }
 
     public void Handle(int arg)
@@ -50,8 +50,8 @@ public class ConcreteStateA : IState
 
     public void Handle(int arg)
     {
-        Debug.Log("状态A逻辑处理"+arg);
-        if (arg>10)
+        Debug.Log("状态A逻辑处理" + arg);
+        if (arg > 10)
         {
             stateContext.SetState(new ConcreteStateB(stateContext));
         }
@@ -69,8 +69,8 @@ public class ConcreteStateB : IState
 
     public void Handle(int arg)
     {
-        Debug.Log("状态B逻辑处理"+arg);
-        if (arg<=10)
+        Debug.Log("状态B逻辑处理" + arg);
+        if (arg <= 10)
         {
             stateContext.SetState(new ConcreteStateA(stateContext));
         }

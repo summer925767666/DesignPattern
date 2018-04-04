@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern", "DesignPattern.csproj", "{8314DA26-AFE9-EE5F-909F-E511E581ED09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.Editor", "DesignPattern.Editor.csproj", "{89A6AA30-CC3D-03B5-AF12-57D2BF3A6F32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8314DA26-AFE9-EE5F-909F-E511E581ED09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8314DA26-AFE9-EE5F-909F-E511E581ED09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8314DA26-AFE9-EE5F-909F-E511E581ED09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8314DA26-AFE9-EE5F-909F-E511E581ED09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A6AA30-CC3D-03B5-AF12-57D2BF3A6F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A6AA30-CC3D-03B5-AF12-57D2BF3A6F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A6AA30-CC3D-03B5-AF12-57D2BF3A6F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A6AA30-CC3D-03B5-AF12-57D2BF3A6F32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

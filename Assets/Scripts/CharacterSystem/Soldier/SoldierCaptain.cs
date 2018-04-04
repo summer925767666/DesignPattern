@@ -5,10 +5,9 @@
         base.PlaySound("CaptainDeath");
     }
 
-    protected override void PlayDeathEffect()
-    {
-        base.PlayEffect("death");
-    }
-
+//    protected override void PlayDeathEffect()
+//    {
+//        base.PlayEffect("death");
+//    }
 }
 
